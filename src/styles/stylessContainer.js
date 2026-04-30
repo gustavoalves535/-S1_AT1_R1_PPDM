@@ -25,7 +25,8 @@ export const stylessContainer = StyleSheet.create({
         position: 'absolute',
         borderTopRightRadius: 20,
         borderTopLeftRadius: 20,
-        bottom: 0,
+        alignContent: center,
+        alignItems: center,
         zIndex: 10
 
     }

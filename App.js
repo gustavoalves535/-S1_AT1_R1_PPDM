@@ -26,7 +26,7 @@ export default function App() {
 
       <View style={stylessContainer.containerCima}>
 
-        <ImageBackground source={IMGdefundo} >
+        <ImageBackground source={IMGdefundo} style={{ width: "100%", height: "100%", flex: "1" }}>
         </ImageBackground>
 
 
