@@ -1,20 +1,59 @@
+import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { stylessButton } from './src/styles/stylessButton.js'
+import { stylessContainer } from './src/styles/stylessContainer.js';
+import { Text, View, TouchableHighlight, ImageBackground, TextInput } from 'react-native';
+import IMGdefundo from "./image/space.jpg"
+
+
+
+
+// import botaoComponents from './src/components/botao.js';
 
 export default function App() {
+
+
+   const [Email, setEmail] = useState("")
+  const [Password, setPassword] = useState("")
+
+
+
+
+ 
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <View style={stylessContainer.container}>
+
+      <View style={stylessContainer.containerCima}>
+
+        <ImageBackground source={IMGdefundo} >
+        </ImageBackground>
+
+
+
+      </View>
+
+      <View style={stylessContainer.containerBaixo}>
+        <TextInput placeholder='Digite seu Email' value={Email} onChangeText={(value) => { setEmail(value) }} />
+
+
+        <TextInput placeholder='Digite sua senha' value={Password} secureTextEntry ={true} onChangeText={(value) => { setPassword(value) }} />
+
+
+        <TouchableHighlight style={[stylessButton.button, stylessButton.login]} underlayColor="blue" onPress={() =>   {if(Email !== "admin") {alert("falha ao fazer login, email ou senha incorreto") }
+    else if (Password !== "1234") {
+    alert("falha ao fazer login, email   ou senha incorreto")
+  } else if (Email === "admin" && Password ==="1234") 
+ { alert("Login realizado") } }}>
+          <Text>Login</Text>
+        </TouchableHighlight>
+
+      </View>
       <StatusBar style="auto" />
     </View>
   );
+
+
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
