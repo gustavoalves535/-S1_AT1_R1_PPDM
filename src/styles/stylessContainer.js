@@ -16,13 +16,18 @@ export const stylessContainer = StyleSheet.create({
     },
 
     containerBaixo: {
-        backgroundColor: "#fff",
-        width: "80%",
-        height: "95%",
+        backgroundColor: "#858585ff",
+        width: "100%",
+        height: "65%",
         position: 'absolute',
+        bottom: 0,
         borderTopRightRadius: 20,
         borderTopLeftRadius: 30,
-        zIndex: 10
+        alignItems: "center",
+        alignContent: "center",
+        zIndex: 10,
+        padding:30,
+        
 
     }
 

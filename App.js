@@ -3,6 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import { stylessButton } from './src/styles/stylessButton.js'
 import { stylessContainer } from './src/styles/stylessContainer.js';
 import { Text, View, TouchableHighlight, ImageBackground, TextInput } from 'react-native';
+import { stylessinputs } from './src/styles/stylessinput.js';
 import IMGdefundo from "./image/space.jpg"
 
 
@@ -34,10 +35,10 @@ export default function App() {
       </View>
 
       <View style={stylessContainer.containerBaixo}>
-        <TextInput placeholder='Digite seu Email' value={Email} onChangeText={(value) => { setEmail(value) }} />
+        <TextInput style={stylessinputs.caixaTxt} placeholder='Digite seu Email' value={Email} onChangeText={(value) => { setEmail(value) }} />
 
 
-        <TextInput placeholder='Digite sua senha' value={Password} secureTextEntry ={true} onChangeText={(value) => { setPassword(value) }} />
+        <TextInput style={stylessinputs.caixaTxt} placeholder='Digite sua senha' value={Password} secureTextEntry ={true} onChangeText={(value) => { setPassword(value) }} />
 
 
         <TouchableHighlight style={[stylessButton.button, stylessButton.login]} underlayColor="blue" onPress={() =>   {if(Email !== "admin") {alert("falha ao fazer login, email ou senha incorreto") }
